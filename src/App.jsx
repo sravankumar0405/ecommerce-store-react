@@ -1,14 +1,23 @@
 import './App.css'
+import {Route, Routes} from 'react-router-dom'
+import Home from './pages/Home/Home'
+import Cart from './pages/Cart/Cart'
+import Products from './pages/Products/Products'
+import Login from './pages/Login/Login'
+import NotFound from './pages/NotFound/NotFound'
+
 
 function App() {
   
   return (
     <>
-      <div className="h-screen flex items-center justify-center bg-slate-900">
-        <h1 className="text-5xl font-bold text-white">
-          E-Commerce Store
-        </h1>
-      </div>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/Products' element={<Products />} />
+        <Route path='/Cart' element={<Cart />} />
+        <Route path='/Login' element={<Login />} />
+        <Route path='/NotFound' element={<NotFound />} />
+      </Routes>
     </>
   )
 }
